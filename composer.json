@@ -1,0 +1,22 @@
+{
+    "name": "isswp101/timer",
+    "description": "Timer",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey Sorokin",
+            "email": "isswp101@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Isswp101\\Timer\\": "src"
+        }
+    }
+}
