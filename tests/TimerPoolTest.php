@@ -1,8 +1,10 @@
 <?php
 
+namespace Isswp101\Timer\Test;
+
 use Isswp101\Timer\TimerPool;
 
-class TimerPoolTest extends PHPUnit_Framework_TestCase
+class TimerPoolTest extends \PHPUnit_Framework_TestCase
 {
     public function testTimerPool()
     {

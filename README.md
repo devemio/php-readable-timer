@@ -21,7 +21,7 @@ $ composer require isswp101/timer
 
 With milliseconds:
 
-```php
+``` php
 $timer = new Timer(); // default H:i:s.ms
 // some code...
 var_dump($timer->end()); // 00:00:07.270
@@ -29,7 +29,7 @@ var_dump($timer->end()); // 00:00:07.270
 
 With microseconds:
 
-```php
+``` php
 $timer = new Timer('H:i:s.u');
 // some code...
 var_dump($timer->end()); // 00:00:07.271315
@@ -37,7 +37,7 @@ var_dump($timer->end()); // 00:00:07.271315
 
 Deferred output:
 
-```php
+``` php
 $timer = new Timer();
 // some code...
 $timer->stop();

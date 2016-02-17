@@ -5,7 +5,9 @@
         "php": ">=5.4.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.*"
+        "phpunit/phpunit": "4.*",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
     },
     "license": "MIT",
     "authors": [
@@ -17,6 +19,11 @@
     "autoload": {
         "psr-4": {
             "Isswp101\\Timer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Isswp101\\Timer\\Test\\": "tests"
         }
     },
     "scripts": {
