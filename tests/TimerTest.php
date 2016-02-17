@@ -25,7 +25,7 @@ class TimerTest extends PHPUnit_Framework_TestCase
     public function testEmptyTimerFormat()
     {
         $timer = new Timer('');
-        $this->assertRegExp('/\.\d{3}/', $timer->end());
+        $this->assertEmpty($timer->end());
     }
 
     public function testCustomTimerFormat()
