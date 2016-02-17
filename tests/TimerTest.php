@@ -35,4 +35,10 @@ class TimerTest extends \PHPUnit_Framework_TestCase
         $timer = new Timer('H-i-s.ms');
         $this->assertRegExp('/\d{2}-\d{2}-\d{2}\.\d{3}/', $timer->end());
     }
+
+    public function testTimerFormatWithMicroseconds()
+    {
+        $timer = new Timer('H:i:s.u');
+        $this->assertRegExp('/\d{2}:\d{2}:\d{2}\.\d{6}/', $timer->end());
+    }
 }
