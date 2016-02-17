@@ -19,13 +19,54 @@ $ composer require isswp101/timer
 
 ## Usage
 
+With milliseconds:
+
 ```php
-$timer = new Timer(); // default H:i:s with ms
-
-// Some code...
-
+$timer = new Timer(); // default H:i:s.ms
+// some code...
 var_dump($timer->end()); // 00:00:07.270
 ```
+
+With microseconds:
+
+```php
+$timer = new Timer('H:i:s.u');
+// some code...
+var_dump($timer->end()); // 00:00:07.271315
+```
+
+Deferred output:
+
+```php
+$timer = new Timer();
+// some code...
+$timer->stop();
+// some other code...
+var_dump($timer->time()); // 00:00:07.270
+```
+
+## Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## Testing
+
+``` bash
+$ composer test
+```
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
+
+## Security
+
+If you discover any security related issues, please email isswp101@gmail.com instead of using the issue tracker.
+
+## Credits
+
+- [Sergey Sorokin][link-author]
+- [All Contributors][link-contributors]
 
 ## License
 
