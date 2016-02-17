@@ -15,11 +15,19 @@ class TimerPool
     protected $markers = [];
 
     /**
-     * Create a new TimerPool instance.
+     * @var string
      */
-    public function __construct()
+    private $format;
+
+    /**
+     * Create a new TimerPool instance.
+     *
+     * @param string $format
+     */
+    public function __construct($format = 'H:i:s.ms')
     {
         $this->timers = [];
+        $this->format = $format;
     }
 
     /**
@@ -29,7 +37,7 @@ class TimerPool
      */
     public function start($marker)
     {
-        $this->timers[$marker] = new Timer;
+        $this->timers[$marker] = new Timer($this->format);
     }
 
     /**
