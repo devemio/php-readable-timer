@@ -24,7 +24,7 @@ class Timer
      *
      * @param string $format
      */
-    public function __construct($format = 'H:i:s')
+    public function __construct($format = 'H:i:s.ms')
     {
         $this->format($format)->start();
     }
@@ -68,10 +68,15 @@ class Timer
      */
     public function time()
     {
-        $time = round($this->stop - $this->start, 3);
-        $ms = substr(number_format($time - floor($time), 3), 1);
+        $time = round($this->stop - $this->start, 6);
+        $u = substr(number_format($time - floor($time), 6), 2);
+        $format = preg_replace('/u/', $u, $this->format);
 
-        return gmdate($this->format, $time) . $ms;
+        $time = round($this->stop - $this->start, 3);
+        $ms = substr(number_format($time - floor($time), 3), 2);
+        $format = preg_replace('/ms/', $ms, $format);
+
+        return gmdate($format, $time);
     }
 
     /**

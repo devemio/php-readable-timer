@@ -12,13 +12,13 @@ class TimerTest extends PHPUnit_Framework_TestCase
 
     public function testTimerFormatWithoutHours()
     {
-        $timer = new Timer('i:s');
+        $timer = new Timer('i:s.ms');
         $this->assertRegExp('/\d{2}:\d{2}\.\d{3}/', $timer->end());
     }
 
     public function testTimerFormatWithoutHoursAndMinutes()
     {
-        $timer = new Timer('s');
+        $timer = new Timer('s.ms');
         $this->assertRegExp('/\d{2}\.\d{3}/', $timer->end());
     }
 
@@ -30,7 +30,7 @@ class TimerTest extends PHPUnit_Framework_TestCase
 
     public function testCustomTimerFormat()
     {
-        $timer = new Timer('H-i-s');
+        $timer = new Timer('H-i-s.ms');
         $this->assertRegExp('/\d{2}-\d{2}-\d{2}\.\d{3}/', $timer->end());
     }
 }
