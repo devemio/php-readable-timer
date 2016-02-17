@@ -7,17 +7,17 @@ class Timer
     /**
      * @var double
      */
-    private $start = 0;
+    private $start;
+
+    /**
+     * @var double
+     */
+    private $time;
 
     /**
      * @var string
      */
     private $format;
-
-    /**
-     * @var double
-     */
-    private $time = 0;
 
     /**
      * Create a new Timer instance and start it.
@@ -70,7 +70,7 @@ class Timer
      */
     public function reset()
     {
-        $this->time = 0;
+        $this->time = 0.0;
         $this->start();
         return $this;
     }
