@@ -48,4 +48,28 @@ class TimerTest extends \PHPUnit_Framework_TestCase
         usleep(1000000);
         $this->assertEquals('00:00:01', $timer->end());
     }
+
+    public function testResetTimer()
+    {
+        $timer = new Timer('H:i:s');
+        usleep(1000000);
+        $timer->stop();
+        usleep(1000000);
+        $timer->reset();
+        usleep(1000000);
+        $timer->stop();
+        $this->assertEquals('00:00:01', $timer->time());
+    }
+
+    public function testTotalTime()
+    {
+        $timer = new Timer('H:i:s');
+        usleep(1000000);
+        $timer->stop();
+        usleep(1000000);
+        $timer->start();
+        usleep(1000000);
+        $timer->stop();
+        $this->assertEquals('00:00:02', $timer->time());
+    }
 }
