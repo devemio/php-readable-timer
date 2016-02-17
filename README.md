@@ -26,3 +26,22 @@ $timer = new Timer(); // default H:i:s with ms
 
 var_dump($timer->end()); // 00:00:07.270
 ```
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+[ico-version]: https://img.shields.io/packagist/v/isswp101/timer.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/isswp101/timer/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/isswp101/timer.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/isswp101/timer.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/isswp101/timer.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/isswp101/timer
+[link-travis]: https://travis-ci.org/isswp101/timer
+[link-scrutinizer]: https://scrutinizer-ci.com/g/isswp101/timer/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/isswp101/timer
+[link-downloads]: https://packagist.org/packages/isswp101/timer
+[link-author]: https://github.com/isswp101
+[link-contributors]: ../../contributors
