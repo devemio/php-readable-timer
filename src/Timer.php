@@ -10,14 +10,14 @@ class Timer
     private $start = 0;
 
     /**
-     * @var double
-     */
-    private $stop = 0;
-
-    /**
      * @var string
      */
     private $format;
+
+    /**
+     * @var double
+     */
+    private $time = 0;
 
     /**
      * Create a new Timer instance and start it.
@@ -30,6 +30,8 @@ class Timer
     }
 
     /**
+     * Set the date format.
+     *
      * @param string $format
      * @return $this
      */
@@ -57,30 +59,55 @@ class Timer
      */
     public function stop()
     {
-        $this->stop = microtime(true);
+        $this->time += microtime(true) - $this->start;
         return $this;
     }
 
     /**
-     * Return the current time of the timer.
+     * Reset the timer.
+     *
+     * @return $this
+     */
+    public function reset()
+    {
+        $this->time = 0;
+        $this->start();
+        return $this;
+    }
+
+    /**
+     * Return measured time.
      *
      * @return string
      */
     public function time()
     {
-        $time = round($this->stop - $this->start, 6);
-        $u = substr(number_format($time - floor($time), 6), 2);
-        $format = preg_replace('/u/', $u, $this->format);
+        $format = $this->format;
 
-        $time = round($this->stop - $this->start, 3);
-        $ms = substr(number_format($time - floor($time), 3), 2);
-        $format = preg_replace('/ms/', $ms, $format);
+        $format = $this->replace('u', 6, $format);
 
-        return gmdate($format, $time);
+        $format = $this->replace('ms', 3, $format);
+
+        return gmdate($format, $this->time);
     }
 
     /**
-     * Stop the timer and show the current time of it.
+     * Replace the date format with calculated values.
+     *
+     * @param string $pattern
+     * @param int $precision
+     * @param string $format
+     * @return string
+     */
+    private function replace($pattern, $precision, $format)
+    {
+        $time = round($this->time, $precision);
+        $value = substr(number_format($time - floor($time), $precision), 2);
+        return str_replace($pattern, $value, $format);
+    }
+
+    /**
+     * Stop the timer and return measured time.
      *
      * @return string
      */
