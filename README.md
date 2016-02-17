@@ -45,6 +45,19 @@ $timer->stop();
 var_dump($timer->time()); // 00:00:07.270
 ```
 
+Deferred output with total measured time:
+``` php
+$timer = new Timer;
+foreach ($items as $item) {
+    // some code...
+    $timer->start();
+    // code for measurement... (1)
+    $timer->stop();
+    // some code...
+}
+var_dump($timer->time()); // total (1) time
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
