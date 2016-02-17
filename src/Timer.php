@@ -5,12 +5,12 @@ namespace Isswp101\Timer;
 class Timer
 {
     /**
-     * @var int
+     * @var double
      */
     private $start = 0;
 
     /**
-     * @var int
+     * @var double
      */
     private $stop = 0;
 
