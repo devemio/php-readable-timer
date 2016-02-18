@@ -46,6 +46,7 @@ var_dump($timer->time()); // 00:00:07.270
 ```
 
 Deferred output with total measured time:
+
 ``` php
 $timer = new Timer;
 foreach ($items as $item) {
@@ -56,6 +57,36 @@ foreach ($items as $item) {
     // some code...
 }
 var_dump($timer->time()); // total (1) time
+```
+
+Simple profiling method with time-ordered output:
+
+``` php
+$timerPool = new TimerPool;
+$timerPool->start('A');
+
+$timerPool->start('B');
+usleep(1000000); // some code...
+$timerPool->stop('B');
+
+$timerPool->start('C');
+usleep(3000000); // some code...
+$timerPool->stop('C');
+
+$timerPool->start('D');
+usleep(2000000); // some code...
+$timerPool->stop('D');
+
+$timerPool->stop('A');
+print_r($timerPool->build());
+
+//    Array
+//    (
+//        [A] => 00:00:06.004
+//        [C] => 00:00:03.001
+//        [D] => 00:00:02.000
+//        [B] => 00:00:01.003
+//    )
 ```
 
 ## Change log
