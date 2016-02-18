@@ -59,7 +59,9 @@ class Timer
      */
     public function stop()
     {
-        $this->time += microtime(true) - $this->start;
+        $time = microtime(true);
+        $this->time += $time - $this->start;
+        $this->start = $time;
         return $this;
     }
 
