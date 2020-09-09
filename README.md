@@ -109,7 +109,6 @@ If you discover any security related issues, please use the issue tracker.
 
 ## Credits
 
-- [Sergey Sorokin][link-author]
 - [All Contributors][link-contributors]
 
 ## License
@@ -128,5 +127,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-scrutinizer]: https://scrutinizer-ci.com/g/isswp101/timer/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/isswp101/timer
 [link-downloads]: https://packagist.org/packages/isswp101/timer
-[link-author]: https://github.com/devemio
 [link-contributors]: ../../contributors
