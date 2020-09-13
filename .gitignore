@@ -1,6 +1,6 @@
-composer.lock
-
 build
+composer.lock
 vendor
-docs
-.idea
+phpcs.xml
+phpunit.xml
+.phpunit.result.cache
