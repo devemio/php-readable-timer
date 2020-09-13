@@ -12,8 +12,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Sergey Sorokin",
-            "email": "isswp101@gmail.com"
+            "name": "Sergey Sorokin"
         }
     ],
     "autoload": {
